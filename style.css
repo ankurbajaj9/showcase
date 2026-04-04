@@ -240,6 +240,10 @@ section {
   gap: 1.2rem;
 }
 
+.project-card .tags {
+  margin-bottom: 0.8rem;
+}
+
 .project-card {
   background: var(--card);
   border: 1px solid var(--border);
