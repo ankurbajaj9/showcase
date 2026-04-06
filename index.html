@@ -6,12 +6,35 @@
   <meta name="description" content="Ankur Bajaj — Senior IT Professional with 16+ years of expertise in cloud-native architecture, data engineering, and full-stack development." />
   <meta name="keywords" content="Ankur Bajaj, Senior Consultant, Solution Architect, Tech Lead, Data Engineer, Java, Python, Scala, Apache Spark, Kafka, Airflow, Kubernetes, Docker, AWS, Google Cloud, GCP, Azure, BigQuery, Databricks, Machine Learning, MLOps, Anti-Money Laundering, AML, ETL, CI/CD, Microservices, Cloud Migration, DevOps, Spring Boot, Terraform, Stockholm" />
   <title>Ankur Bajaj — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <!-- Add 'js' class immediately so CSS can gate reveal animations on JS availability -->
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
+  <!-- ═══════════════════  COMPACT STICKY NAV (visible after scroll) ═══════════════════ -->
+  <div id="compact-nav" aria-hidden="true" inert>
+    <div class="compact-nav-inner">
+      <span class="compact-nav-name">Ankur Bajaj</span>
+      <nav class="compact-nav-links" aria-label="Page sections">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#certifications">Certifications</a>
+      </nav>
+      <a href="Ankur_Resume.pdf" download="Ankur_Bajaj_Resume.pdf" class="compact-nav-download">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5v-2z"/></svg>
+        Resume
+      </a>
+    </div>
+  </div>
+
   <!-- ═══════════════════  HERO  ═══════════════════ -->
-  <header class="hero">
+  <header class="hero" id="hero">
     <div class="container">
       <picture>
         <source srcset="agile_search_65_rt.webp" type="image/webp" />
@@ -20,7 +43,10 @@
       </picture>
       <div class="hero-info">
         <h1>Ankur Bajaj</h1>
-        <p class="title">Senior Consultant · Stockholm, Sweden</p>
+        <p class="title">
+          Senior Consultant · Stockholm, Sweden
+          <span class="status-badge">● Open to opportunities</span>
+        </p>
         <nav class="hero-links" aria-label="Contact links">
           <a href="https://github.com/ankurbajaj9" target="_blank" rel="noopener noreferrer">
             <!-- GitHub icon -->
@@ -36,7 +62,7 @@
             </svg>
             LinkedIn
           </a>
-          <a href="Ankur_Resume.pdf" download="Ankur_Bajaj_Resume.pdf">
+          <a href="Ankur_Resume.pdf" download="Ankur_Bajaj_Resume.pdf" class="hero-download-cta">
             <!-- Download icon -->
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5v-2z"/>
@@ -49,10 +75,32 @@
     </div>
   </header>
 
+  <!-- ═══════════════════  KEY STATS STRIP  ═══════════════════ -->
+  <div class="stats-strip">
+    <div class="container stats-strip-inner">
+      <div class="stat-chip">
+        <span class="stat-num">16+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-chip">
+        <span class="stat-num">3</span>
+        <span class="stat-label">Cloud Certifications</span>
+      </div>
+      <div class="stat-chip">
+        <span class="stat-num">AML</span>
+        <span class="stat-label">Domain Expert</span>
+      </div>
+      <div class="stat-chip">
+        <span class="stat-num">10+</span>
+        <span class="stat-label">End-to-End Solutions</span>
+      </div>
+    </div>
+  </div>
+
   <main class="container">
 
     <!-- ═══════════════════  ABOUT  ═══════════════════ -->
-    <section id="about" aria-labelledby="about-heading">
+    <section id="about" class="reveal" aria-labelledby="about-heading">
       <h2 class="section-title" id="about-heading">About</h2>
       <p class="about-text">
         Senior IT professional with 16+ years of experience spanning Full-Stack Development, Tech Leadership,
@@ -67,10 +115,10 @@
     </section>
 
     <!-- ═══════════════════  SKILLS  ═══════════════════ -->
-    <section id="skills" aria-labelledby="skills-heading">
+    <section id="skills" class="reveal" aria-labelledby="skills-heading">
       <h2 class="section-title" id="skills-heading">Skills</h2>
       <div class="skills-grid">
-        <div class="skill-category">
+        <div class="skill-category" data-cat="languages">
           <h3>Languages</h3>
           <div class="tags">
             <span class="tag">Java</span>
@@ -79,10 +127,9 @@
             <span class="tag">R</span>
             <span class="tag">JavaScript</span>
             <span class="tag">SQL</span>
-            <span class="tag">Bash</span>
           </div>
         </div>
-        <div class="skill-category">
+        <div class="skill-category" data-cat="cloud">
           <h3>Cloud Platforms</h3>
           <div class="tags">
             <span class="tag">AWS</span>
@@ -90,7 +137,7 @@
             <span class="tag">Azure</span>
           </div>
         </div>
-        <div class="skill-category">
+        <div class="skill-category" data-cat="data">
           <h3>Data Engineering</h3>
           <div class="tags">
             <span class="tag">Apache Spark</span>
@@ -103,7 +150,7 @@
             <span class="tag">Databricks</span>
           </div>
         </div>
-        <div class="skill-category">
+        <div class="skill-category" data-cat="devops">
           <h3>DevOps &amp; Containers</h3>
           <div class="tags">
             <span class="tag">Kubernetes</span>
@@ -117,7 +164,7 @@
             <span class="tag">Azure DevOps</span>
           </div>
         </div>
-        <div class="skill-category">
+        <div class="skill-category" data-cat="arch">
           <h3>Architecture &amp; Databases</h3>
           <div class="tags">
             <span class="tag">Microservices</span>
@@ -129,7 +176,7 @@
             <span class="tag">NoSQL</span>
           </div>
         </div>
-        <div class="skill-category">
+        <div class="skill-category" data-cat="domains">
           <h3>Domains</h3>
           <div class="tags">
             <span class="tag">Machine Learning</span>
@@ -144,7 +191,7 @@
     </section>
 
     <!-- ═══════════════════  EXPERIENCE  ═══════════════════ -->
-    <section id="experience" aria-labelledby="experience-heading">
+    <section id="experience" class="reveal" aria-labelledby="experience-heading">
       <h2 class="section-title" id="experience-heading">Experience</h2>
       <div class="timeline">
 
@@ -162,6 +209,14 @@
               <li>Participating in requirements gathering and strategic planning for the migration journey.</li>
               <li>Leveraging cloud-native services: BigTable, BigQuery, DataProc, and Kubernetes (K8s).</li>
             </ul>
+          </div>
+          <div class="card-stack">
+            <span class="tag">GCP</span>
+            <span class="tag">BigQuery</span>
+            <span class="tag">BigTable</span>
+            <span class="tag">DataProc</span>
+            <span class="tag">Kubernetes</span>
+            <span class="tag">AML</span>
           </div>
         </article>
 
@@ -182,6 +237,16 @@
               <li>Used Kafka for inter-service communication and Red Hat OpenShift to deploy the Java-based Rule Engine.</li>
             </ul>
           </div>
+          <div class="card-stack">
+            <span class="tag">Apache Spark</span>
+            <span class="tag">Scala</span>
+            <span class="tag">Python</span>
+            <span class="tag">Airflow</span>
+            <span class="tag">Kafka</span>
+            <span class="tag">OpenShift</span>
+            <span class="tag">GitHub Actions</span>
+            <span class="tag">Machine Learning</span>
+          </div>
         </article>
 
         <article class="card">
@@ -199,6 +264,13 @@
               <li>Worked with DynamoDB to enable fast reads for Lambda functions.</li>
             </ul>
           </div>
+          <div class="card-stack">
+            <span class="tag">AWS</span>
+            <span class="tag">Serverless</span>
+            <span class="tag">DynamoDB</span>
+            <span class="tag">Lambda</span>
+            <span class="tag">GitHub Actions</span>
+          </div>
         </article>
 
         <article class="card">
@@ -215,6 +287,15 @@
               <li>Designed and deployed cloud-native applications on AWS, Azure, and GCP following Agile / Scrum methodologies.</li>
               <li>Established CI/CD processes and DevOps pipelines using GitLab, Jenkins, and Azure DevOps.</li>
             </ul>
+          </div>
+          <div class="card-stack">
+            <span class="tag">AWS</span>
+            <span class="tag">Azure</span>
+            <span class="tag">GCP</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Jenkins</span>
+            <span class="tag">GitLab CI/CD</span>
+            <span class="tag">Azure DevOps</span>
           </div>
         </article>
 
@@ -234,13 +315,19 @@
               <li>Designed and implemented modules independently to fit the new workflow of the migrated application.</li>
             </ul>
           </div>
+          <div class="card-stack">
+            <span class="tag">Java</span>
+            <span class="tag">JSF</span>
+            <span class="tag">Full-Stack</span>
+            <span class="tag">SQL</span>
+          </div>
         </article>
 
       </div>
     </section>
 
     <!-- ═══════════════════  EDUCATION  ═══════════════════ -->
-    <section id="education" aria-labelledby="education-heading">
+    <section id="education" class="reveal" aria-labelledby="education-heading">
       <h2 class="section-title" id="education-heading">Education</h2>
       <div class="timeline">
 
@@ -258,32 +345,41 @@
     </section>
 
     <!-- ═══════════════════  CERTIFICATIONS  ═══════════════════ -->
-    <section id="certifications" aria-labelledby="certifications-heading">
+    <section id="certifications" class="reveal" aria-labelledby="certifications-heading">
       <h2 class="section-title" id="certifications-heading">Certifications</h2>
       <div class="timeline">
 
-        <article class="card">
+        <article class="card cert-aws">
           <div class="card-header">
             <div>
-              <div class="card-title">AWS Certified Solutions Architect — Professional</div>
+              <div class="card-title">
+                <span class="cert-badge cert-badge-aws">AWS</span>
+                AWS Certified Solutions Architect — Professional
+              </div>
               <div class="card-subtitle">Amazon Web Services</div>
             </div>
           </div>
         </article>
 
-        <article class="card">
+        <article class="card cert-azure">
           <div class="card-header">
             <div>
-              <div class="card-title">Microsoft AZ-900 Azure Fundamentals</div>
+              <div class="card-title">
+                <span class="cert-badge cert-badge-azure">AZ</span>
+                Microsoft AZ-900 Azure Fundamentals
+              </div>
               <div class="card-subtitle">Microsoft</div>
             </div>
           </div>
         </article>
 
-        <article class="card">
+        <article class="card cert-gcp">
           <div class="card-header">
             <div>
-              <div class="card-title">Google Cloud Certified — Associate Cloud Engineer</div>
+              <div class="card-title">
+                <span class="cert-badge cert-badge-gcp">GCP</span>
+                Google Cloud Certified — Associate Cloud Engineer
+              </div>
               <div class="card-subtitle">Google Cloud</div>
             </div>
           </div>
@@ -305,6 +401,40 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ── Compact sticky nav: show after scrolling past hero ──
+    const hero = document.getElementById('hero');
+    const compactNav = document.getElementById('compact-nav');
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const visible = !entry.isIntersecting;
+        compactNav.classList.toggle('compact-nav--visible', visible);
+        compactNav.setAttribute('aria-hidden', String(!visible));
+        if (visible) {
+          compactNav.removeAttribute('inert');
+        } else {
+          compactNav.setAttribute('inert', '');
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(hero);
+
+    // ── Scroll-reveal for sections and cards ──
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08 }
+    );
+    document.querySelectorAll('.reveal, .card, .skill-category, .stat-chip').forEach(el => {
+      revealObserver.observe(el);
+    });
   </script>
 
 </body>
