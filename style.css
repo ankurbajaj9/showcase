@@ -415,7 +415,7 @@ section {
   border-radius: 14px;
   padding: 1.1rem 1.3rem;
   box-shadow: var(--shadow-sm);
-  transition: box-shadow 0.2s, transform 0.2s, opacity 0.5s, translate 0.5s;
+  transition: box-shadow 0.2s, transform 0.2s, opacity 0.5s;
   opacity: 0;
   transform: translateY(14px);
 }
