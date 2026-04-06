@@ -10,11 +10,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <!-- Add 'js' class immediately so CSS can gate reveal animations on JS availability -->
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
   <!-- ═══════════════════  COMPACT STICKY NAV (visible after scroll) ═══════════════════ -->
-  <div id="compact-nav" aria-hidden="true">
+  <div id="compact-nav" aria-hidden="true" inert>
     <div class="compact-nav-inner">
       <span class="compact-nav-name">Ankur Bajaj</span>
       <nav class="compact-nav-links" aria-label="Page sections">
@@ -408,6 +410,11 @@
         const visible = !entry.isIntersecting;
         compactNav.classList.toggle('compact-nav--visible', visible);
         compactNav.setAttribute('aria-hidden', String(!visible));
+        if (visible) {
+          compactNav.removeAttribute('inert');
+        } else {
+          compactNav.setAttribute('inert', '');
+        }
       },
       { threshold: 0.1 }
     );

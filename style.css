@@ -44,6 +44,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 60px; /* offset anchor scrolling by the height of the compact sticky nav */
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -65,7 +66,12 @@ body {
   background-image:
     radial-gradient(ellipse at 20% 50%, rgba(37,99,235,0.04) 0%, transparent 60%),
     radial-gradient(ellipse at 80% 10%, rgba(6,182,212,0.05) 0%, transparent 50%);
-  background-attachment: fixed;
+}
+
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  body {
+    background-attachment: fixed;
+  }
 }
 
 a {
@@ -99,13 +105,16 @@ a:hover {
   box-shadow: 0 2px 16px rgba(0,0,0,0.25);
   transform: translateY(-100%);
   opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  visibility: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s linear 0.3s;
   pointer-events: none;
 }
 
 #compact-nav.compact-nav--visible {
   transform: translateY(0);
   opacity: 1;
+  visibility: visible;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s linear 0s;
   pointer-events: auto;
 }
 
@@ -132,7 +141,8 @@ a:hover {
   gap: 0.25rem;
   flex: 1;
   flex-wrap: nowrap;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .compact-nav-links a {
@@ -319,18 +329,21 @@ a:hover {
   padding: 1.1rem 2rem;
   gap: 0.15rem;
   border-right: 1px solid var(--border);
-  opacity: 0;
-  transform: translateY(12px);
   transition: opacity 0.5s ease, transform 0.5s ease, background 0.2s;
 }
 
-.stat-chip:last-child {
-  border-right: none;
+html.js .stat-chip:not(.revealed) {
+  opacity: 0;
+  transform: translateY(12px);
 }
 
 .stat-chip.revealed {
   opacity: 1;
   transform: none;
+}
+
+.stat-chip:last-child {
+  border-right: none;
 }
 
 .stat-chip:hover {
@@ -416,6 +429,9 @@ section {
   padding: 1.1rem 1.3rem;
   box-shadow: var(--shadow-sm);
   transition: box-shadow 0.2s, transform 0.2s, opacity 0.5s;
+}
+
+html.js .skill-category:not(.revealed) {
   opacity: 0;
   transform: translateY(14px);
 }
@@ -560,6 +576,9 @@ section {
   transition: box-shadow 0.22s, transform 0.22s, opacity 0.5s;
   margin-left: 1.5rem;
   position: relative;
+}
+
+html.js .card:not(.revealed) {
   opacity: 0;
   transform: translateX(-8px);
 }
@@ -688,9 +707,12 @@ section {
 
 /* ═══════════  SCROLL REVEAL (sections)  ═══════════ */
 .reveal {
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+html.js .reveal:not(.revealed) {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
 }
 
 .reveal.revealed {
@@ -842,10 +864,6 @@ footer {
   .cert-aws  { border-left: 4px solid #FF9900 !important; }
   .cert-azure { border-left: 4px solid #0078D4 !important; }
   .cert-gcp  { border-left: 4px solid #34A853 !important; }
-
-  section {
-    page-break-inside: avoid;
-  }
 
   footer {
     margin-top: 1rem;
