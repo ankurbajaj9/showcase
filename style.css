@@ -50,7 +50,7 @@ html {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .card, .tag, .hero-links a, .skill-category,
-  .stat-chip, .reveal, #compact-nav {
+  .about-text, .stat-chip, .reveal, #compact-nav {
     transition: none !important;
     animation: none !important;
     opacity: 1 !important;
@@ -411,11 +411,11 @@ section {
   border-radius: 14px;
   padding: 1.4rem 1.6rem;
   box-shadow: var(--shadow-sm);
-  transition: box-shadow 0.22s, transform 0.22s;
+  transition: box-shadow 0.2s, transform 0.2s;
 }
 
 .about-text:hover {
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-md);
   transform: translateY(-2px);
 }
 
