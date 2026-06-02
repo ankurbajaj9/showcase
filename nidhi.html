@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nidhi — Profile page with bilingual English/Swedish content and resume placeholders." />
+  <title>Nidhi — Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>document.documentElement.classList.add('js');</script>
+  <style>
+    .language-toggle {
+      margin-top: 1rem;
+      display: inline-flex;
+      padding: 0.25rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.25);
+      gap: 0.25rem;
+    }
+
+    .language-toggle button {
+      border: 0;
+      background: transparent;
+      color: rgba(255,255,255,0.92);
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .language-toggle button[aria-pressed="true"] {
+      background: #fff;
+      color: var(--primary-dark);
+    }
+
+    .language-toggle button:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
+
+    .hero-links a.is-placeholder {
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.85);
+      border-style: dashed;
+      cursor: not-allowed;
+    }
+
+    .hero-links a.is-placeholder:hover {
+      transform: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.22);
+      text-decoration: none;
+    }
+
+    .translation-block[hidden] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="compact-nav" aria-hidden="true" inert>
+    <div class="compact-nav-inner">
+      <span class="compact-nav-name">Nidhi</span>
+      <nav class="compact-nav-links" aria-label="Page sections">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+      </nav>
+      <a href="#" class="compact-nav-download" aria-disabled="true" onclick="return false;" title="Placeholder link for English resume">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5v-2z"/></svg>
+        Resume (EN)
+      </a>
+    </div>
+  </div>
+
+  <header class="hero" id="hero">
+    <div class="container">
+      <img class="avatar" src="agile_search_65_rt_optimized.jpg" alt="Nidhi" width="110" height="110" />
+      <div class="hero-info">
+        <h1>Nidhi</h1>
+        <p class="title">
+          <span data-i18n="title">Professional Profile · Stockholm, Sweden</span>
+          <span class="status-badge" data-i18n="availability">Resume links coming soon</span>
+        </p>
+
+        <div class="language-toggle" role="group" aria-label="Language selector">
+          <button id="lang-en" type="button" aria-pressed="true" aria-controls="content-en">English</button>
+          <button id="lang-sv" type="button" aria-pressed="false" aria-controls="content-sv">Svenska</button>
+        </div>
+
+        <nav class="hero-links" aria-label="Profile actions">
+          <a href="#" class="hero-download-cta is-placeholder" aria-disabled="true" onclick="return false;" title="Placeholder link for English resume" data-i18n="resumeEnCta">Download English Resume (Coming soon)</a>
+          <a href="#" class="is-placeholder" aria-disabled="true" onclick="return false;" title="Placeholder link for Swedish resume" data-i18n="resumeSvCta">Download Swedish Resume (Coming soon)</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="stats-strip">
+    <div class="container stats-strip-inner">
+      <div class="stat-chip"><span class="stat-num">2</span><span class="stat-label" data-i18n="statLanguages">Languages</span></div>
+      <div class="stat-chip"><span class="stat-num">100%</span><span class="stat-label" data-i18n="statResponsive">Responsive</span></div>
+      <div class="stat-chip"><span class="stat-num">A11Y</span><span class="stat-label" data-i18n="statAccessible">Accessible-first</span></div>
+    </div>
+  </div>
+
+  <main class="container">
+    <section id="about" class="reveal" aria-labelledby="about-heading">
+      <h2 class="section-title" id="about-heading" data-i18n="aboutHeading">About</h2>
+
+      <div id="content-en" class="translation-block" lang="en">
+        <p class="about-text">This page is prepared for Nidhi and follows the same visual system as the main portfolio site. English and Swedish views are available through the language toggle above.</p>
+      </div>
+
+      <div id="content-sv" class="translation-block" lang="sv" hidden>
+        <p class="about-text">Den här sidan är förberedd för Nidhi och följer samma visuella stil som huvudportföljen. Engelska och svenska vyer finns via språkväxlaren ovan.</p>
+      </div>
+    </section>
+
+    <section id="skills" class="reveal" aria-labelledby="skills-heading">
+      <h2 class="section-title" id="skills-heading" data-i18n="skillsHeading">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category" data-cat="languages">
+          <h3 data-i18n="skillsLangHeading">Languages</h3>
+          <div class="tags"><span class="tag">English</span><span class="tag">Svenska</span></div>
+        </div>
+        <div class="skill-category" data-cat="domains">
+          <h3 data-i18n="skillsProfileHeading">Profile</h3>
+          <div class="tags"><span class="tag" data-i18n="tagBilingual">Bilingual Resume</span><span class="tag" data-i18n="tagPortfolio">Portfolio Profile</span><span class="tag" data-i18n="tagResponsive">Responsive Design</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="reveal" aria-labelledby="experience-heading">
+      <h2 class="section-title" id="experience-heading" data-i18n="experienceHeading">Experience</h2>
+      <div class="timeline">
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title" data-i18n="placeholderTitle">Content Placeholder</div>
+              <div class="card-subtitle" data-i18n="placeholderSubtitle">Details can be updated when profile information is shared</div>
+            </div>
+            <span class="card-period" data-i18n="placeholderPeriod">To be added</span>
+          </div>
+          <div class="card-desc" data-i18n="placeholderDesc">This card keeps the current timeline style intact and marks where additional experience details can be integrated later.</div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Nidhi · Built with ♥ and hosted on <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">GitHub Pages</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        pageTitle: 'Nidhi — Profile',
+        title: 'Professional Profile · Stockholm, Sweden',
+        availability: 'Resume links coming soon',
+        resumeEnCta: 'Download English Resume (Coming soon)',
+        resumeSvCta: 'Download Swedish Resume (Coming soon)',
+        statLanguages: 'Languages',
+        statResponsive: 'Responsive',
+        statAccessible: 'Accessible-first',
+        aboutHeading: 'About',
+        skillsHeading: 'Skills',
+        skillsLangHeading: 'Languages',
+        skillsProfileHeading: 'Profile',
+        tagBilingual: 'Bilingual Resume',
+        tagPortfolio: 'Portfolio Profile',
+        tagResponsive: 'Responsive Design',
+        experienceHeading: 'Experience',
+        placeholderTitle: 'Content Placeholder',
+        placeholderSubtitle: 'Details can be updated when profile information is shared',
+        placeholderPeriod: 'To be added',
+        placeholderDesc: 'This card keeps the current timeline style intact and marks where additional experience details can be integrated later.'
+      },
+      sv: {
+        pageTitle: 'Nidhi — Profil',
+        title: 'Professionell profil · Stockholm, Sverige',
+        availability: 'CV-länkar kommer snart',
+        resumeEnCta: 'Ladda ner engelskt CV (kommer snart)',
+        resumeSvCta: 'Ladda ner svenskt CV (kommer snart)',
+        statLanguages: 'Språk',
+        statResponsive: 'Responsiv',
+        statAccessible: 'Tillgänglighetsfokus',
+        aboutHeading: 'Om',
+        skillsHeading: 'Kompetenser',
+        skillsLangHeading: 'Språk',
+        skillsProfileHeading: 'Profil',
+        tagBilingual: 'Tvåspråkigt CV',
+        tagPortfolio: 'Portföljprofil',
+        tagResponsive: 'Responsiv design',
+        experienceHeading: 'Erfarenhet',
+        placeholderTitle: 'Platshållare för innehåll',
+        placeholderSubtitle: 'Detaljer kan uppdateras när profilinformation delas',
+        placeholderPeriod: 'Läggs till senare',
+        placeholderDesc: 'Det här kortet behåller den befintliga tidslinjestilen och markerar var ytterligare erfarenhetsdetaljer kan läggas till senare.'
+      }
+    };
+
+    function setLanguage(lang) {
+      const isEnglish = lang === 'en';
+      const enBtn = document.getElementById('lang-en');
+      const svBtn = document.getElementById('lang-sv');
+      const enBlock = document.getElementById('content-en');
+      const svBlock = document.getElementById('content-sv');
+
+      enBtn.setAttribute('aria-pressed', String(isEnglish));
+      svBtn.setAttribute('aria-pressed', String(!isEnglish));
+      enBlock.hidden = !isEnglish;
+      svBlock.hidden = isEnglish;
+      document.documentElement.lang = lang;
+      document.title = translations[lang].pageTitle;
+
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+    }
+
+    document.getElementById('lang-en').addEventListener('click', () => setLanguage('en'));
+    document.getElementById('lang-sv').addEventListener('click', () => setLanguage('sv'));
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const hero = document.getElementById('hero');
+    const compactNav = document.getElementById('compact-nav');
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const visible = !entry.isIntersecting;
+        compactNav.classList.toggle('compact-nav--visible', visible);
+        compactNav.setAttribute('aria-hidden', String(!visible));
+        if (visible) {
+          compactNav.removeAttribute('inert');
+        } else {
+          compactNav.setAttribute('inert', '');
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(hero);
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08 }
+    );
+    document.querySelectorAll('.reveal, .card, .skill-category, .stat-chip').forEach(el => {
+      revealObserver.observe(el);
+    });
+  </script>
+</body>
+</html>
