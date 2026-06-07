@@ -51,6 +51,8 @@
     }
     .contact-list {
       list-style: none;
+      margin: 0;
+      padding: 0;
       display: grid;
       gap: 0.45rem;
       color: var(--text-muted);
@@ -69,7 +71,14 @@
         <a href="#skills" data-i18n="nav_skills">Skills</a>
         <a href="#downloads" data-i18n="nav_downloads">Downloads</a>
       </nav>
-      <a href="#downloads" class="compact-nav-download" data-i18n="compact_download">Resume PDFs</a>
+      <a
+        href="Nidhi_Sachdeva_Bajaj_Resume_EN.pdf"
+        download="Nidhi_Sachdeva_Bajaj_Resume_EN.pdf"
+        class="compact-nav-download"
+        data-pdf-en="Nidhi_Sachdeva_Bajaj_Resume_EN.pdf"
+        data-pdf-sv="Nidhi_Sachdeva_Bajaj_Resume_SV.pdf"
+        data-i18n="compact_download"
+      >Resume PDFs</a>
     </div>
   </div>
 
@@ -230,8 +239,8 @@
           </div>
         </div>
         <nav class="hero-links" aria-label="Resume download links">
-          <a href="Nidhi_Sachdeva_Bajaj_Resume_EN.pdf" class="hero-download-cta" data-i18n="download_en">Download English Resume (Placeholder)</a>
-          <a href="Nidhi_Sachdeva_Bajaj_Resume_SV.pdf" class="hero-download-cta" data-i18n="download_sv">Download Swedish Resume (Placeholder)</a>
+          <a href="Nidhi_Sachdeva_Bajaj_Resume_EN.pdf" download="Nidhi_Sachdeva_Bajaj_Resume_EN.pdf" class="hero-download-cta" data-i18n="download_en">Download English Resume (Placeholder)</a>
+          <a href="Nidhi_Sachdeva_Bajaj_Resume_SV.pdf" download="Nidhi_Sachdeva_Bajaj_Resume_SV.pdf" class="hero-download-cta" data-i18n="download_sv">Download Swedish Resume (Placeholder)</a>
         </nav>
         <p class="placeholder-note" data-i18n="downloads_note">Integration point: replace these placeholder href values when the final English/Swedish PDF files are added.</p>
       </article>
@@ -398,6 +407,12 @@
       document.querySelectorAll('.lang-switch button').forEach((button) => {
         button.setAttribute('aria-pressed', String(button.dataset.lang === lang));
       });
+      const compactDownload = document.querySelector('.compact-nav-download');
+      if (compactDownload && compactDownload.dataset.pdfEn && compactDownload.dataset.pdfSv) {
+        const selectedPdf = lang === 'sv' ? compactDownload.dataset.pdfSv : compactDownload.dataset.pdfEn;
+        compactDownload.setAttribute('href', selectedPdf);
+        compactDownload.setAttribute('download', selectedPdf);
+      }
     };
 
     document.querySelectorAll('.lang-switch button').forEach((button) => {
